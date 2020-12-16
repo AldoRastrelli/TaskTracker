@@ -1,0 +1,27 @@
+.input-group {
+    margin-left: 10px;
+}
+
+.form-control {
+    max-width: 200px;
+}
+
+.title-container {
+    
+    margin-left: 10px;
+    padding: 10px;
+    border-radius: 7px;
+    width: 150px;
+    
+}
+
+.title {
+    font-size: larger;
+    text-align: left;
+    font-weight: bold; 
+    color: white;
+}
+
+.title-container:hover{
+    background-color: #0a9cf073;
+}

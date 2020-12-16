@@ -1,0 +1,10 @@
+.board-container {
+    background-color: #198754;
+    width: 69%;
+    min-height: 700px;
+    border-radius: 15px;
+    float: left;
+    position: relative;
+    align-content: center;
+    padding: 5px;
+}

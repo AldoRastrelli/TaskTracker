@@ -1,0 +1,17 @@
+.container {
+    background-color: rgb(255, 255, 255);
+    width: 30%;
+    min-height: 50px;
+    border-radius: 15px;
+    float: inline-start;
+    margin: 5px;
+    overflow: scroll;
+}
+
+.title {
+    margin-top: 10px;
+    text-align: left;
+    font-weight: bold; 
+    color: black;
+    font-size: inherit;
+}

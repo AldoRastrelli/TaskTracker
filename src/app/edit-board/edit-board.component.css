@@ -1,0 +1,8 @@
+.edit-board-container {
+    background-color: #EC7C32;
+    width: 30%;
+    min-height: 700px;
+    border-radius: 15px;
+    float: right;
+    position: relative;
+}

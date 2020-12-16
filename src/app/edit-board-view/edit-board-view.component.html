@@ -1,0 +1,54 @@
+<div *ngIf=isDefaultView()>
+
+    <div class="center">
+        <button (click)="addNewView()" type="button" class="btn btn-success">
+            {{NewTaskMessage}}
+        </button>
+        <div class="description">Or select a task on <br>the board to edit it.</div>
+    </div>
+
+</div>
+
+<div *ngIf=!isDefaultView() class="justified">
+
+    <form>
+
+        <div class="header">
+            <img src="./assets/header.png">
+            <input placeholder="Insert your title's task here" style="min-width: 80%;">
+        </div>
+
+        <div>
+            <img src="./assets/left-alignment.png" style="float: left;">
+            <span class="input-label">Description</span>
+            <textarea></textarea>
+        </div>
+
+        <div>
+            <img src="./assets/project.png">
+            <span class="input-label">Status</span>
+            <select>
+                <option>Planned</option>
+                <option>In Progress</option>
+                <option>Completed</option>
+            </select>
+        </div>
+
+        <div class="footer">
+            <img src="./assets/wall-clock.png">
+            <span class="input-label">EstimatedTime</span>
+            <input type="number" class="estimatedInput" value=0>
+            <select>
+                <option>Hour(s)</option>
+                <option>Day(s)</option>
+                <option>Week(s)</option>
+                <option>Month(s)</option>
+
+            </select>
+        </div>
+    </form>
+    <div class="buttons">
+        <button (click)="saveTask()" type="button" class="btn btn-success">Save</button>
+        <button (click)="cancelTask()" type="button" class="btn btn-danger">Cancel</button>
+    </div>
+</div>
