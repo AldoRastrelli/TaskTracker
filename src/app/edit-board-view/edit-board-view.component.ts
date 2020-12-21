@@ -1,4 +1,8 @@
+import { ComponentFactoryResolver } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+import { title } from 'process';
+import { CardComponent } from '../card/card.component';
+import { TaskComponent } from '../task/task.component';
 
 @Component({
   selector: 'edit-board-view',
@@ -10,20 +14,23 @@ export class EditBoardViewComponent implements OnInit {
   constructor() { }
 
   NewTaskMessage = "+ Add New Task";
-  onDefaultView = true;
+  onDefaultView;
 
   isDefaultView() {
     return this.onDefaultView;
   }
   ngOnInit(): void {
+    this.onDefaultView = true;
   }
 
   addNewView(){
     this.onDefaultView = false;
   }
 
-  saveTask(){
-
+  saveTask(title:string, description:string, state:string, estimatedTime:number, timeUnit:string){
+    const task = new TaskComponent(title, state, description, estimatedTime, timeUnit);
+    console.log("New task:", task.title)
+    const card = new CardComponent(task);
     this.onDefaultView = true;
   }
 
@@ -32,4 +39,5 @@ export class EditBoardViewComponent implements OnInit {
       this.onDefaultView = true;
     }    
   }
+
 }

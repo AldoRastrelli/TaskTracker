@@ -1,4 +1,4 @@
-import { Component, ComponentFactoryResolver, Input } from '@angular/core';
+import { Component, ComponentFactoryResolver, Inject, Input } from '@angular/core';
 
 @Component({
   selector: 'task',
@@ -17,8 +17,17 @@ export class TaskComponent {
   estimatedTime:Number;
   @Input()
   timeUnit:String;
+  
 
-  constructor(private componentFactoryResolver: ComponentFactoryResolver) {
-    
+  constructor(@Inject(String) title: string,
+              @Inject(String) description:string,
+              @Inject(String) state:string,
+              @Inject(Number) estimatedTime:number,
+              @Inject(String) timeUnit:string) {
+    this.title = title;
+    this.description = description;
+    this.state = state;
+    this.estimatedTime = estimatedTime;
+    this.timeUnit = timeUnit;
   }
 }

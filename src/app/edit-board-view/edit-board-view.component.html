@@ -11,23 +11,23 @@
 
 <div *ngIf=!isDefaultView() class="justified">
 
-    <form>
+    <form action="saveTask(title, description, status, estimatedTime, timeUnit)">
 
         <div class="header">
             <img src="./assets/header.png">
-            <input placeholder="Insert your title's task here" style="min-width: 80%;">
+            <input #title placeholder="Insert your title's task here" style="min-width: 80%;">
         </div>
 
         <div>
             <img src="./assets/left-alignment.png" style="float: left;">
             <span class="input-label">Description</span>
-            <textarea></textarea>
+            <textarea #description></textarea>
         </div>
 
         <div>
             <img src="./assets/project.png">
             <span class="input-label">Status</span>
-            <select>
+            <select #status>
                 <option>Planned</option>
                 <option>In Progress</option>
                 <option>Completed</option>
@@ -37,8 +37,8 @@
         <div class="footer">
             <img src="./assets/wall-clock.png">
             <span class="input-label">EstimatedTime</span>
-            <input type="number" class="estimatedInput" value=0>
-            <select>
+            <input #estimatedTime type="number" class="estimatedInput" min="1" value=1>
+            <select #timeUnit>
                 <option>Hour(s)</option>
                 <option>Day(s)</option>
                 <option>Week(s)</option>
@@ -48,7 +48,7 @@
         </div>
     </form>
     <div class="buttons">
-        <button (click)="saveTask()" type="button" class="btn btn-success">Save</button>
+        <button (click)="saveTask(title.value, description.value, status.value, estimatedTime.value, timeUnit.value)" type="button" class="btn btn-success">Save</button>
         <button (click)="cancelTask()" type="button" class="btn btn-danger">Cancel</button>
     </div>
 </div>

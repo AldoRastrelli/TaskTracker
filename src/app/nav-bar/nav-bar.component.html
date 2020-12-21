@@ -1,8 +1,15 @@
 <nav class="navbar navbar-light" style="background-color: #007ac0;">
-      <div class="input-group">
-        <!-- <input type="text" class="form-control" value="Project Name" aria-describedby="basic-addon1"> -->
-      <div class="title-container">
-        <span class="title">{{title}}</span>
-      </div>
-      </div>
-  </nav>
+  <div class="input-group">
+    <div class="title-container" *ngIf="titleIsSet">
+      <span (click)="changeTitle()" class="title">{{title}}</span>
+    </div>
+
+    <div class="title-input-container" *ngIf="!titleIsSet">
+      <input #titleInput value="{{title}}">
+
+      <button (click)="setTitle(titleInput.value)">
+        <img src="./assets/check.png"/>
+      </button>
+    </div>
+  </div>
+</nav>

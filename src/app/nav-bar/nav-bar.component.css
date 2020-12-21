@@ -11,8 +11,7 @@
     margin-left: 10px;
     padding: 10px;
     border-radius: 7px;
-    width: 150px;
-    
+    width: auto;
 }
 
 .title {
@@ -24,4 +23,29 @@
 
 .title-container:hover{
     background-color: #0a9cf073;
+}
+
+.title-input-container {
+    margin-left: 10px;
+    padding: 10px;
+    border-radius: 7px;
+}
+
+img {
+    width: 34px;
+    margin-left: 10px;
+    float: inherit;
+    aspect-ratio: 1;
+}
+
+img:hover{
+    opacity: 75%;
+}
+
+button {
+    background-color: transparent;
+  border: none;
+  cursor: pointer;
+  aspect-ratio: 1;
+  height: 34px;
 }
